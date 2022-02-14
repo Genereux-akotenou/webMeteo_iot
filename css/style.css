@@ -1,0 +1,218 @@
+@font-face {
+    font-family: "Montserrat-bold";
+    src: url("../fonts/Montserrat/Montserrat-Bold.ttf");
+}
+@font-face {
+    font-family: "Montserrat-medium";
+    src: url("../fonts/Montserrat/Montserrat-Medium.ttf");
+}
+@font-face {
+    font-family: "Montserrat-light";
+    src: url("../fonts/Montserrat/Montserrat-Light.ttf");
+}
+@font-face {
+    font-family: "montserrat";
+    src: url("../fonts/Montserrat.ttf");
+}
+@font-face {
+    font-family: "Poppins-Black";
+    src: url("../fonts/Poppins/Poppins-Black.ttf");
+}
+@font-face {
+    font-family: "Poppins-Black";
+    src: url("../fonts/Poppins/Poppins-Black.ttf");
+}
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url("../fonts/Poppins/Poppins-Bold.ttf");
+}
+@font-face {
+    font-family: "Poppins-ExtraLight";
+    src: url("../fonts/Poppins/Poppins-ExtraLight.ttf");
+}
+@font-face {
+    font-family: "Poppins-Regular";
+    src: url("../fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: "Poppins-Thin";
+    src: url("../fonts/Poppins/Poppins-Thin.ttf");
+}
+@font-face {
+    font-family: "Poppins-Medium";
+    src: url("../fonts/Poppins/Poppins-Medium.ttf");
+}
+@font-face {
+    font-family: "Poppins-Light";
+    src: url("../fonts/Poppins/Poppins-Light.ttf");
+}
+body{
+    /*background: linear-gradient(to top, rgb(16, 127, 211) 40%, blue 60%);*/
+    background: linear-gradient(to bottom, #203c73, #1c65b2, #3e9bdb,  #3e9bdb);
+    margin: 0;
+    /*height: 100vh;*/
+    font-family: 'Poppins-Light', 'Times New Roman', Times, serif;
+}
+header{
+    /*background-color: red;*/
+    display: flex;
+    justify-content: right;
+    padding: 0.5em 1em;
+}
+header a{
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+MAIN BLOC STYLE 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+#mainBloc1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.blocTemp{
+    /*background-color: red;*/
+    justify-content: center;
+}
+.blocTemp div{
+    text-align: center;
+}
+.blocTemp div:last-of-type p{
+    color: white;
+    font-size: 4.5em;
+    margin: 0;
+    padding: 0;
+}
+.blocTemp1{
+    justify-content: center;
+    margin-top: 4em;
+}
+.blocTemp1 p{
+    display: inline-block;
+    color: white;
+    font-size: 1.6em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.blocTemp1 p:first-of-type{
+    position: relative;
+    top: 0.3em;
+    font-size: 2em;
+}
+.blocTemp2{
+    justify-content: center;
+    color: white;
+    font-size: 1.6em;
+    /*background-color: red;*/
+    position: relative;
+    top: -0.4em;
+    margin-bottom: 4em;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+SECOND BLOC STYLE
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+.lotOfData{
+    border-top: 1px solid #dddddd77;
+    border-bottom: 10px solid #16161629;   
+    margin-bottom: 2.5em; 
+}
+.subBlocTitle{
+    position: relative;
+    top: -2.1em;
+    left: 0.5em;
+    color: white;
+}
+.TimeCart{
+    height: 17em;
+    padding: 0.5em 1em;
+    border-bottom: 1px solid #dddddd77;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1.9em; 
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+}
+.detailBox{
+    /*background-color: red;*/
+    /*min-width: 15em;*/
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.detailBox div{
+    text-align: center;
+    color: white;
+}
+.data{
+    font-size: 22px;
+    position: relative;
+    top: 2em;
+}
+.time p{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+.time span{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+.TimeCart > .detailBox:not(:first-child) {
+    border-left: 1px solid #dddddd4b;
+}
+.data b{
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 5px;
+    position: relative;
+}
+.m2{
+    position: relative;
+    /*top: -1.2em;*/
+}
+.m3{
+    position: relative;
+    /*top: -2.4em;*/
+}
+.data b span:first-of-type{
+    position: relative;
+    top: -0.7em;
+    right: -0.2em;
+}
+.data b span:last-of-type{
+    width: 3px;
+    height: 3px;
+    padding: 0.15em;
+    border-radius: 100%;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    top: -0.2em;
+    left: -0.2em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.author{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    color: white;
+    border-bottom: 30px solid rgba(0, 0, 0, 0.275);
+}
