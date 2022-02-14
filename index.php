@@ -392,12 +392,11 @@
             lastdata = data[data.length-1]
 
             //assign current temp
-            lastdata[3] = lastdata[3] ? lastdata[3] : '...';
+            lastdata[3] = (lastdata[3] && lastdata[3] != "temperature") ? lastdata[3] : '...';
             document.getElementById('temp1').innerHTML = lastdata[3] + '°c';
 
             //assign current humidity
-            lastdata[4] = lastdata[4] ? lastdata[4] : '...';
-            document.getElementById('temp2').innerHTML = 'Humidité ' + lastdata[4] + '%';
+            document.getElementById('temp2').innerHTML = (lastdata[4] && lastdata[4] != "humidite") ?  'Humidité ' + lastdata[4] + '%' : '. . .';
             
             console.log(data)
             //generateHtmlTable(data);
