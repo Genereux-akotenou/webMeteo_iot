@@ -18,10 +18,15 @@
     <!-- window title  -->
     <title>webMeteo - AI&IoT Club</title>
     <!-- 20210914_0921 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
 </head>
 <body>
+    <?php
+        setlocale(LC_ALL, 'fr_FR.utf8', 'fra').': ';
+    ?>
     <header>
-        <a href="">GET DATASET</a>
+        <a target="_blank" href="./dataset.csv">GET DATASET</a>
     </header>
     <main>
         <!-- main block -->
@@ -29,7 +34,7 @@
             <div class="gFlex gFlex-column blocTemp1">
                 <p><b><i class="fa fa-map-marker"></i> Calavi</b></p>
                 <p>
-                    dim. 13 févier 00:00
+                    <?php echo substr(strtolower(strftime('%A', time()+(86400*$i))), 0, 3) . '. ' . strftime('%d %B', time()+(86400*$i)) . ' ' . date('H:m'); ?>
                 </p>
             </div>
             <div class="gFlex gFlex-row blocTemp">
@@ -37,11 +42,11 @@
                     <img width="100px" src="./img/wt-2.svg" alt="">
                 </div>
                 <div>
-                    <p>28°c</p>
+                    <p id="temp1">28°c</p>
                 </div>
             </div>
             <div class="gFlex gFlex-row blocTemp2">
-                <span>Clair</span>
+                <span id="temp2">Humidité 35%</span>
             </div>
         </div>
 
@@ -375,5 +380,29 @@
     <footer>
         
     </footer>
+    <script>
+        var data;
+        $.ajax({
+        type: "GET",  
+        url: "dataset.csv",
+        dataType: "text",       
+        success: function(response)  
+        {
+            data = $.csv.toArrays(response);
+            lastdata = data[data.length-1]
+
+            //assign current temp
+            lastdata[3] = lastdata[3] ? lastdata[3] : '...';
+            document.getElementById('temp1').innerHTML = lastdata[3] + '°c';
+
+            //assign current humidity
+            lastdata[4] = lastdata[4] ? lastdata[4] : '...';
+            document.getElementById('temp2').innerHTML = 'Humidité ' + lastdata[4] + '%';
+            
+            console.log(data)
+            //generateHtmlTable(data);
+        }   
+        });
+    </script>
 </body>
 </html>
